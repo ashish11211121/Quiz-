@@ -12,7 +12,7 @@ Quizzard is a modern, full-stack quiz application designed to make learning enga
 
 ## 🔗 Live Demo
 Experience the platform live here:  
-🚀 **[Launch Quizzard](https://quiz-app-deploy-seven.vercel.app)**
+🚀 **[Launch Quizzard](https://quiz-application-murex.vercel.app)**
 
 ---
 

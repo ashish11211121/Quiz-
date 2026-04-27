@@ -3,49 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quizzard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Explore Quizzes | Quizzard</title>
     <link rel="shortcut icon" href="/images/logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="/stylesheets/landing.css">
-   
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: #0f172a;
+            color: white;
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .quiz-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .quiz-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            border-color: rgba(59, 130, 246, 0.5);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+        .fade-in {
+            animation: fadeIn 0.6s ease-out forwards;
+            opacity: 0;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
 </head>
-<body>
-    <h1 id="heading">Quizzes</h1>
-    <div class="container">
-        <a href="/gkquiz">
-            <div class="folder  removeGs" id="gs" >
-                <img src="/images/general-knowledge-quiz.webp">
-                <h1>General Knowledge</h1>
+<body class="min-h-screen p-8 md:p-16">
+    <div class="max-w-7xl mx-auto">
+        <header class="mb-16 flex justify-between items-center fade-in" style="animation-delay: 0.1s">
+            <div>
+                <h1 class="text-5xl font-bold tracking-tight mb-2">Explore <span class="text-blue-400">Categories</span></h1>
+                <p class="text-slate-400 text-lg">Choose a topic and test your knowledge</p>
             </div>
-        </a>
-        <a href="/sciencequiz"><div class="folder removeScience" id="science" >
-            <img src="/images/science quiz.webp" id="science-img">
-            <h1>Science</h1>
+            <a href="/" class="glass px-6 py-2 rounded-full hover:bg-white/5 transition-colors">Back Home</a>
+        </header>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- GK Quiz -->
+            <a href="/gkquiz" class="fade-in" style="animation-delay: 0.2s">
+                <div class="quiz-card glass rounded-3xl overflow-hidden h-full flex flex-col">
+                    <div class="h-48 overflow-hidden">
+                        <img src="/images/general-knowledge-quiz.webp" class="w-full h-full object-cover grayscale-[0.2] hover:grayscale-0 transition-all duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h2 class="text-2xl font-bold mb-2">General Knowledge</h2>
+                        <p class="text-slate-400 text-sm mb-4">Mixed topics from history, politics, and more.</p>
+                        <span class="text-blue-400 font-semibold flex items-center gap-2">Start Quiz <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Science Quiz -->
+            <a href="/sciencequiz" class="fade-in" style="animation-delay: 0.3s">
+                <div class="quiz-card glass rounded-3xl overflow-hidden h-full flex flex-col">
+                    <div class="h-48 overflow-hidden">
+                        <img src="/images/science quiz.webp" class="w-full h-full object-cover grayscale-[0.2] hover:grayscale-0 transition-all duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h2 class="text-2xl font-bold mb-2">Science</h2>
+                        <p class="text-slate-400 text-sm mb-4">Explore the wonders of physics, biology, and space.</p>
+                        <span class="text-blue-400 font-semibold flex items-center gap-2">Start Quiz <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- History Quiz -->
+            <a href="/historyquiz" class="fade-in" style="animation-delay: 0.4s">
+                <div class="quiz-card glass rounded-3xl overflow-hidden h-full flex flex-col">
+                    <div class="h-48 overflow-hidden">
+                        <img src="/images/history.png" class="w-full h-full object-cover grayscale-[0.2] hover:grayscale-0 transition-all duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h2 class="text-2xl font-bold mb-2">History</h2>
+                        <p class="text-slate-400 text-sm mb-4">Travel back in time to the world's greatest events.</p>
+                        <span class="text-blue-400 font-semibold flex items-center gap-2">Start Quiz <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Sports Quiz -->
+            <a href="/sportsquiz" class="fade-in" style="animation-delay: 0.5s">
+                <div class="quiz-card glass rounded-3xl overflow-hidden h-full flex flex-col">
+                    <div class="h-48 overflow-hidden">
+                        <img src="/images/sport.jpg" class="w-full h-full object-cover grayscale-[0.2] hover:grayscale-0 transition-all duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h2 class="text-2xl font-bold mb-2">Sports</h2>
+                        <p class="text-slate-400 text-sm mb-4">Test your knowledge of teams, players, and games.</p>
+                        <span class="text-blue-400 font-semibold flex items-center gap-2">Start Quiz <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></span>
+                    </div>
+                </div>
+            </a>
         </div>
-    </a>
-        <a href="/historyquiz"><div class="folder removeHistory" id="history" >
-            <img src="/images/history.png" id="history-img">
-            <h1>History</h1>
-        </div>
-    </a>
-        <a href="/sportsquiz"><div class="folder removeSport" id="sport">
-            <img src="/images/sport.jpg">
-            <h1>Sports</h1>
-        </div>
-    </a>
     </div>
-    <script>
-        let gsElement = document.querySelector("#gs");
-        let scienceElement = document.querySelector("#science");
-        let historyElement = document.querySelector("#history");
-        let sportElement = document.querySelector("#sport");
-        window.addEventListener("load",function(){
-            // alert("Registration is Done");
-           gsElement.classList.remove("removeGs");
-           scienceElement.classList.remove("removeScience");
-           historyElement.classList.remove("removeHistory");
-           sportElement.classList.remove("removeSport");
-        })
-         
-    </script>
 </body>
 </html>

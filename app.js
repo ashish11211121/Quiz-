@@ -14,7 +14,7 @@ var app = express();
 // MongoDB Connection
 const MONGODB_URL = process.env.MONGODB_URL;
 if (MONGODB_URL) {
-  mongoose.connect(MONGODB_URL)
+  mongoose.connect(MONGODB_URL, { serverSelectionTimeoutMS: 5000 })
     .then(() => console.log("Connected to MongoDB"))
     .catch(err => console.error("MongoDB connection error:", err));
 } else {

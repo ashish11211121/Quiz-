@@ -25,10 +25,6 @@ router.get('/register',(req,res)=>{
   res.render('register')
 })
 
-router.get('/register',(req,res)=>{
-  res.render('register')
-})
-
 router.post('/registering', async (req, res) => {
   const { Username, email, Password } = req.body;
 

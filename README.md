@@ -3,6 +3,8 @@
 Quizzard is a modern, full-stack quiz application designed to make learning engaging and fun. Built with the **MERN** stack (MongoDB, Express, React - with EJS, Node.js), it offers a seamless experience for taking quizzes across various categories like General Knowledge, Science, History, and Sports.
 
 ![Quizzard Preview](https://img.shields.io/badge/Status-Live-brightgreen)
+![Deployment](https://img.shields.io/badge/Deployment-GitHub_Sync-blue)
+![Vercel](https://img.shields.io/badge/Vercel-Automated-black)
 ![Vercel](https://img.shields.io/badge/Deployment-Vercel-black)
 ![Node.js](https://img.shields.io/badge/Runtime-Node.js-339933)
 

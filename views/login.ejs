@@ -1,55 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Quizzard</title>
+  <title>Sign In | Quizzard</title>
   <link rel="shortcut icon" href="/images/logo.png" type="image/x-icon">
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            customRed: "rgb(232, 95, 131)",
-            customPink: "rgb(237, 119, 137)",
-            customOrange: "rgb(245, 142, 110)",
-          },
-        },
-      },
-    };
-  </script>
-
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: #0f172a;
+    }
+    .glass {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .input-field {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+    }
+    .input-field:focus {
+      border-color: #3b82f6;
+      background: rgba(255, 255, 255, 0.08);
+      outline: none;
+      box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+    }
+    .hero-gradient {
+      background: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.15) 0%, rgba(15, 23, 42, 0) 70%);
+    }
+  </style>
 </head>
+<body class="text-slate-200 min-h-screen flex items-center justify-center p-6">
+  <div class="hero-gradient absolute inset-0 z-0 pointer-events-none"></div>
 
-<body>
-  <div class="main w-screen h-screen bg-gradient-to-b from-gray-950 to-gray-800 flex justify-center items-center">
-
-    <div class="login w-[425px] h-[550px] bg- rounded-3xl shadow-black shadow-2xl bg-cover bg-center"
-      style="background-image: url(/images/Mount\ Fuji\ Art\ Print\ by\ Happy\ Home\ Artistry.jpeg)">
-
-      <div class="overlay w-full h-full bg- rounded-3xl flex gap-10 flex-col items-center pt-12 "
-        style=" background-color: rgba(0, 0, 0, 0.591);">
-        <h1 class="text-red-600 text-4xl font-bold  ">Sign in</h1>
-        <!-- <p class="text-l text-white"></p> -->
-        <form action="/check" method="post" class="flex justify-center flex-col gap-12 mt-6">
-          <input type="text" name="email" id="email" placeholder="Email"
-            class="text-xl bg-transparent border-b-4 border-b-red-600 w-72 text-red-600 placeholder:text-white p-2" required>
-          <input type="password" name="Password" id="Password" placeholder="Password"
-            class="text-xl bg-transparent border-b-4 border-b-red-600 w-72 p-2 placeholder:text-white text-red-600" required>
-          <div class="remember">
-            <input type="checkbox" name="remember" id="remember" class="mt-5 ">
-          <label for="remember" class="w-40 text-l font-semibold text-red-600 p-2">Keep Me Sign In</label>
-          </div>  
-          <button type="submit" class="w-40 text-xl text-white font-bold p-2 bg-red-600 rounded-3xl mx-auto">SignIn</button>
-          <p class="text-red-600 ml-auto mb-2 ">Don't have an account? <a href="/register" class="text-white">Register Here</a></p>
-        </form>
-
+  <div class="relative z-10 w-full max-w-md">
+    <div class="glass p-8 md:p-12 rounded-[2rem] shadow-2xl">
+      <div class="text-center mb-10">
+        <div class="inline-block p-4 rounded-2xl bg-blue-500/10 mb-4">
+          <img src="/images/logo.png" alt="logo" class="w-12 h-12">
+        </div>
+        <h1 class="text-4xl font-bold text-white mb-2">Welcome Back</h1>
+        <p class="text-slate-400">Continue your journey of wisdom</p>
       </div>
 
+      <form action="/check" method="post" class="space-y-6">
+        <div>
+          <label class="block text-sm font-medium text-slate-400 mb-2 ml-1">Email Address</label>
+          <input type="email" name="email" placeholder="name@example.com" 
+            class="input-field w-full px-5 py-4 rounded-2xl text-white placeholder:text-slate-600" required>
+        </div>
+        
+        <div>
+          <div class="flex justify-between mb-2 ml-1">
+            <label class="block text-sm font-medium text-slate-400">Password</label>
+            <a href="#" class="text-sm text-blue-400 hover:text-blue-300">Forgot?</a>
+          </div>
+          <input type="password" name="Password" placeholder="••••••••" 
+            class="input-field w-full px-5 py-4 rounded-2xl text-white placeholder:text-slate-600" required>
+        </div>
+
+        <div class="flex items-center gap-3 ml-1">
+          <input type="checkbox" id="remember" class="w-4 h-4 rounded border-slate-700 bg-slate-800 text-blue-500 focus:ring-blue-500 focus:ring-offset-slate-900">
+          <label for="remember" class="text-sm text-slate-400">Keep me signed in</label>
+        </div>
+
+        <button type="submit" 
+          class="w-full py-4 bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white font-bold rounded-2xl transition-all shadow-lg shadow-blue-500/25 active:scale-[0.98]">
+          Sign In
+        </button>
+      </form>
+
+      <div class="mt-8 text-center">
+        <p class="text-slate-400">
+          Don't have an account? 
+          <a href="/register" class="text-blue-400 font-semibold hover:text-blue-300 transition-colors">Join Free</a>
+        </p>
+      </div>
+    </div>
+    
+    <div class="mt-8 text-center text-slate-500 text-sm">
+      <a href="/" class="hover:text-slate-300">← Back to home</a>
     </div>
   </div>
 </body>
-
 </html>

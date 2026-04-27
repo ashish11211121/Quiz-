@@ -31,7 +31,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/health', (req, res) => res.send('OK'));
+app.use('/health', (req, res) => {
+  res.json({
+    status: 'OK',
+    mongodb: mongoose.connection.readyState === 1 ? 'connected' : 'disconnected'
+  });
+});
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 

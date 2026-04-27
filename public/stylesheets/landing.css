@@ -1,0 +1,97 @@
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+body
+{
+
+
+    background-image: url(/images/blackbg.jpeg);
+    background-size: cover;
+
+
+}
+#heading
+{
+    text-align: center;
+    font-size: 3rem;
+    margin-top: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1d535f87;
+    font-family: serif;
+    box-shadow: 0 0 15px 0 rgba(240, 235, 235, 0.653);
+    color:white;
+
+}
+.folder{
+    background-color: #b4d3daa9;
+    padding: 2rem;
+    width: 25vw;
+    height: 18rem;
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+    align-items: center;
+     border: .8rem solid transparent; 
+     border-image: linear-gradient(to bottom,#465bf8,#0b034f);
+     border-image-slice: 0.5;
+     border-top-left-radius: 8rem;
+     border-bottom-right-radius: 8rem;
+     cursor: pointer;
+     transition: all 1.2s ease-in-out;
+   
+}
+
+.folder img
+{
+    width: 9rem;
+}
+.folder h1
+{
+  font-family: 'Courier New', Courier, monospace;
+  color:black;
+}
+
+.container
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 4rem;
+    max-width: 80vw;
+    margin: auto 5rem auto 13rem;
+   
+}
+#science-img
+{
+    height: 7rem;
+    width: 12rem;
+}
+#history-img
+{
+    height: 9rem;
+}
+
+.removeGs{
+    transform: translate(77rem, 30rem);
+   
+}
+.removeScience{
+    transform: translate(-77rem, 30rem);
+   
+}
+.removeHistory{
+    transform: translate(77rem, 10rem);
+   
+}
+.removeSport{
+    transform: translate(-77rem, 10rem);
+   
+}
+

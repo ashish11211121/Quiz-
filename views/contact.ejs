@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quizzard</title>
+  <link rel="shortcut icon" href="/images/logo.png" type="image/x-icon">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            customRed: "rgb(232, 95, 131)",
+            customPink: "rgb(237, 119, 137)",
+            customOrange: "rgb(245, 142, 110)",
+          },
+        },
+      },
+    };
+  </script>
+
+</head>
+
+  <body class="bg-gradient-to-br from-customPink to-customOrange flex justify-center items-center h-screen relative">
+    <img src="./images/white circle.png" class="size-20 absolute z-0 top-0 left-11"/>
+    <img
+      src="./images/white circle.png"
+      class="size-24 absolute z-0 bottom-0 left-11"
+    />
+    <img
+      src="./images/white circle.png"
+      class="size-16 absolute z-0 top-0 right-56"
+    />
+
+    <img
+      class="size-16 absolute z-0 bottom-44 right-16"
+      src="./images/white circle.png"
+    />
+    <img src="/images/white circle.png" class="size-28 absolute z-0 top-72 right-72" />
+
+    <img
+      src="./images/white circle.png"
+      class="size-24 absolute z-0 top-48 left-24"
+    />
+    <img
+      class="size-24 absolute z-0 bottom-16 right-8"
+      src="./images/white circle.png"
+    />
+    <img src="/images/white circle.png" class="size-10 absolute z-0 top-12 right-8" />
+
+    <img
+      src="./images/white circle.png"
+      class="size-20 absolute z-0 top-8 left-16"
+    />
+    <img
+      class="size-14 absolute z-0 bottom-24 right-24"
+      src="./images/white circle.png"
+    />
+    <img
+      src="/images/white circle.png"
+      class="size-16 absolute z-0 top-20 right-12"
+    />
+
+    <img
+      src="./images/white circle.png"
+      class="size-12 absolute z-0 top-42 left-8"
+    />
+    <div class="cont w-[800px] flex bg-white rounded-[25px]">
+      <div class="container1 w-[300px] h-[550px] relative z-10 overflow-hidden">
+        <a href="/" class="w-24 h-24 bg-red-800"><img class="absolute top-14 left-8" src="/images/icons8-back-arrow-32.png" alt="backarrow"/></a>
+
+        <img
+          class="size-24 absolute z-20 bottom-20 left-20"
+          src="./images/icons8-circle-48.png"
+          alt=""
+        />
+        <img
+          class="size-20 absolute z-20 top-10 left-52"
+          src="./images/icons8-circle-48.png"
+          alt=""
+        />
+        <img
+          class="size-14 absolute z-20 top-28 left-16"
+          src="./images/icons8-circle-48.png"
+          alt=""
+        />
+        <img
+          class="size-16 absolute z-20 bottom-60 right-5"
+          src="./images/icons8-circle-48.png"
+          alt=""
+        />
+        <img
+          class="size-20 absolute z-20 left-[-28px]"
+          src="./images/icons8-circle-48.png"
+          alt=""
+        />
+        <img
+          src="/images/icons8-paper-airplane-96.png"
+          class="size-40 absolute z-30 bottom-36 left-10"
+          alt=""
+        />
+      </div>
+      <div class="container2 w-[500px] h-[550px] p-8 relative z-10 rounded-3xl">
+        <h1 class="text-3xl font-semibold mb-6 text-gray-600 p-3">
+          Contact Us
+        </h1>
+
+        <form action="/thank" method="post">
+          <div class="mb-4">
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="  Your Name"
+              class="p-4 w-full border rounded-3xl bg-gray-200 text-gray-700"
+              required
+            />
+          </div>
+
+          <div class="mb-4">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Your Email"
+              class="p-4 w-full mt-2 border rounded-3xl bg-gray-200 text-gray-700"
+              required
+            />
+          </div>
+
+          <div class="mb-4">
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              placeholder="Write Your message"
+              class="p-4 w-full mt-2 border rounded-3xl bg-gray-200 text-gray-700"
+              required
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            class="bg-customOrange text-white text-xl font-bold px-4 py-2 rounded-3xl w-full h-11 hover:bg-customPink transition duration-300"
+          >
+            Submit →
+          </button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

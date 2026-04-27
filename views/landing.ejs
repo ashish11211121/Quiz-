@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizzard</title>
+    <link rel="shortcut icon" href="/images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="/stylesheets/landing.css">
+   
+</head>
+<body>
+    <h1 id="heading">Quizzes</h1>
+    <div class="container">
+        <a href="/gkquiz">
+            <div class="folder  removeGs" id="gs" >
+                <img src="/images/general-knowledge-quiz.webp">
+                <h1>General Knowledge</h1>
+            </div>
+        </a>
+        <a href="/sciencequiz"><div class="folder removeScience" id="science" >
+            <img src="/images/science quiz.webp" id="science-img">
+            <h1>Science</h1>
+        </div>
+    </a>
+        <a href="/historyquiz"><div class="folder removeHistory" id="history" >
+            <img src="/images/history.png" id="history-img">
+            <h1>History</h1>
+        </div>
+    </a>
+        <a href="/sportsquiz"><div class="folder removeSport" id="sport">
+            <img src="/images/sport.jpg">
+            <h1>Sports</h1>
+        </div>
+    </a>
+    </div>
+    <script>
+        let gsElement = document.querySelector("#gs");
+        let scienceElement = document.querySelector("#science");
+        let historyElement = document.querySelector("#history");
+        let sportElement = document.querySelector("#sport");
+        window.addEventListener("load",function(){
+            // alert("Registration is Done");
+           gsElement.classList.remove("removeGs");
+           scienceElement.classList.remove("removeScience");
+           historyElement.classList.remove("removeHistory");
+           sportElement.classList.remove("removeSport");
+        })
+         
+    </script>
+</body>
+</html>

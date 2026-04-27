@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quizzard</title>
+  <link rel="shortcut icon" href="/images/logo.png" type="image/x-icon">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            customRed: "rgb(232, 95, 131)",
+            customPink: "rgb(237, 119, 137)",
+            customOrange: "rgb(245, 142, 110)",
+          },
+        },
+      },
+    };
+  </script>
+
+</head>
+
+<body>
+  <div class="main w-screen h-screen bg-gradient-to-b from-gray-950 to-gray-800 flex justify-center items-center">
+
+    <div class="login w-[425px] h-[550px] bg- rounded-3xl shadow-black shadow-2xl bg-cover bg-center"
+      style="background-image: url(/images/Mount\ Fuji\ Art\ Print\ by\ Happy\ Home\ Artistry.jpeg)">
+
+      <div class="overlay w-full h-full bg- rounded-3xl flex gap-10 flex-col items-center pt-12 "
+        style=" background-color: rgba(0, 0, 0, 0.591);">
+        <h1 class="text-red-600 text-4xl font-bold  ">Register</h1>
+        <form action="/registering " method="post" class="flex justify-center flex-col gap-4 ">
+
+          <input type="text" name="Username" id="Username" placeholder="Username"
+            class="text-xl bg-transparent border-b-4 border-b-red-600 w-72 text-red-600 placeholder:text-white p-2" required>
+
+          <input type="text" name="email" id="email" placeholder="Email"
+            class="text-xl bg-transparent border-b-4 border-b-red-600 w-72 text-red-600 placeholder:text-white p-2" required>
+
+          <input type="password" name="Password" id="Password" placeholder="Password"
+            class="text-xl bg-transparent border-b-4 border-b-red-600 w-72 p-2 placeholder:text-white text-red-600" required>
+
+          <input type="password" name="Confirm password" id="Confirm password" placeholder="Confirm Password"
+            class="text-xl bg-transparent border-b-4 border-b-red-600 w-72 p-2 placeholder:text-white text-red-600" required>
+
+          <button type="submit" class="w-40 text-xl text-white font-bold p-2 bg-red-600 rounded-3xl mx-auto mt-11">Register</button>
+           
+          <p class="text-red-600 text-xs  mt-2 ">
+            By registering, you agree to our  <a href="/terms" target="_blank" class="text-white">Terms of Service</a> <br> and
+            <a href="/privacy" target="_blank">Privacy Policy</a>.
+        </p>    
+        </form>
+
+      </div>
+
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+config:
+  target: "http://localhost:5000"
+  phases:
+    - duration: 30
+      arrivalRate: 5
+      rampTo: 25
+      name: "Phase 1: Warm up"
+    - duration: 60
+      arrivalRate: 25
+      name: "Phase 2: Sustained load (50-100 concurrent)"
+  engines:
+    socketio-v3: {} # Artillery engine for Socket.io v3/v4
+
+scenarios:
+  - name: "Full Matchmaking & Game Loop"
+    engine: "socketio-v3"
+    flow:
+      # 1. Connect to WebSocket
+      - connect: {}
+      - think: 1
+      
+      # 2. Join Matchmaking
+      - emit:
+          channel: "join_matchmaking"
+          data:
+            userId: "artillery_user_{{ $uuid }}"
+            categoryId: "1"
+            eloRating: 1200
+      
+      # 3. Wait in queue
+      - think: 5
+      
+      # 4. Simulate answering 5 questions over the next minute
+      - loop:
+          - think: 10 # Wait 10s (reading question)
+          - emit:
+              channel: "submit_answer"
+              data:
+                matchId: "mock_match_test" # In a real advanced test, we capture this from match_found event
+                userId: "artillery_user_{{ $uuid }}"
+                answerIndex: 2
+                timeTaken: 5000
+        count: 5

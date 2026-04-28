@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-50: #f5f3ff;
+  --color-brand-100: #ede9fe;
+  --color-brand-200: #ddd6fe;
+  --color-brand-300: #c4b5fd;
+  --color-brand-400: #a78bfa;
+  --color-brand-500: #8b5cf6;
+  --color-brand-600: #7c3aed;
+  --color-brand-700: #6d28d9;
+  --color-brand-800: #5b21b6;
+  --color-brand-900: #4c1d95;
+  --color-brand-950: #2e1065;
+  
+  --color-surface: #0a0514;
+  --color-surface-hover: #130a27;
+  --color-surface-border: #231641;
+}
+
+:root {
+  --background: #0a0514;
+  --foreground: #f8fafc;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-outfit);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  background-image: 
+    radial-gradient(circle at 15% 50%, rgba(124, 58, 237, 0.1), transparent 25%),
+    radial-gradient(circle at 85% 30%, rgba(56, 189, 248, 0.1), transparent 25%);
+  background-attachment: fixed;
+  font-family: var(--font-outfit), sans-serif;
+  overflow-x: hidden;
+}
+
+.glass-panel {
+  background: rgba(19, 10, 39, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--color-surface-border);
+}
+
+.text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(to right, #a78bfa, #38bdf8);
+}
